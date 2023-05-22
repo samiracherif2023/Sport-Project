@@ -1,0 +1,54 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">{{title | asterix}}</h1>
+          <h4 style="color: black;"> {{actuelDate | date: "dd/MM/yyyy hh: mm"}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName="email" placeholder="Email">
+            </div>
+            <div *ngIf="loginForm.controls['email'].invalid &&
+              (loginForm.controls['email'].touched || 
+              loginForm.controls['email'].dirty)">
+            <div *ngIf="loginForm.controls['email'].errors.required" style="color: red;">
+              Email is required
+            </div>
+            <div *ngIf="loginForm.controls['email'].errors.email" style="color: red;">
+              Email invalid
+            </div>
+          </div>
+            <div class="form-group">
+              <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            </div>
+            <!-- <div *ngIf="loginForm.controls['password'].invalid &&
+              (loginForm.controls['password'].touched || 
+              loginForm.controls['password'].dirty)">
+            <div *ngIf="loginForm.controls['password'].errors.required" style="color: red;">
+              Password is required
+            </div>
+            <div *ngIf="loginForm.controls['password'].errors.minlength" style="color: red;">
+              Password must have at least 6 chars
+            </div>
+            <div *ngIf="loginForm.controls['password'].errors.maxlength" style="color: red;">
+              Password must have at most 12 chars
+            </div>
+          </div> -->
+            <div class="form-group">
+              <input type="submit" (click)="login()" class="btn btn-primary py-3 px-5" value="Login">
+            </div>
+            <div style="color: red;">{{errorMsg}}</div>
+          </form>  
+        </div>
+        
+      </div>
+    </div>
+  </div>

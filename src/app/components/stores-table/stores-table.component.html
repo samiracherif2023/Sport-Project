@@ -1,0 +1,23 @@
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col"> Adress</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let store of stores">
+        <th >{{store.id}}</th>
+        <th >{{store.name}}</th>
+        <td>{{store.adress}}</td>
+        
+        <td>
+          <button class="btn btn-warning" (click)="goToEdit(store.id)">Edit</button>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+

@@ -1,0 +1,28 @@
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Capacity</th>
+        <th scope="col">City</th>
+        
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stadium of stadiums">
+        <th >{{stadium._id}}</th>
+        <th >{{stadium.name}}</th>
+        <td>{{stadium.capacity}}</td>
+        <td>{{stadium.city}}</td>
+        
+        <td>
+
+          <button class="btn btn-warning" (click)="goToEdit(stadium._id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteStadium(stadium._id)">Delete</button></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+
